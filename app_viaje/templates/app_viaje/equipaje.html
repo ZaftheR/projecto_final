@@ -1,0 +1,65 @@
+{% extends "app_viaje/base.html" %}
+
+{% block title %}
+Guía de Viaje | Equipaje
+{% endblock %}
+
+{% block content %}
+<section id="about" class="py-5">
+    <div class="container mt-4">
+      <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">Todo lo que necesitas saber sobre equipajes</h1>
+        
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Tipos de Equipajes Permitidos</h2>
+            <p class="mb-2">Cuando viajas en avión, puedes llevar dos tipos principales de equipaje:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Equipaje de Mano:</strong> Maleta pequeña o mochila que puedes llevar contigo en la cabina. Dimensiones comunes: 55x40x20 cm. Peso permitido: entre 7 y 10 kg (dependiendo de la aerolínea).</li>
+                <li><strong>Equipaje Facturado:</strong> Maleta más grande que se despacha en el mostrador de la aerolínea y se transporta en la bodega del avión. Peso permitido: 23 kg en la mayoría de los vuelos nacionales e internacionales.</li>
+            </ul>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Pesos Permitidos y Tarifas por Exceso</h2>
+            <p class="mb-2">Es importante respetar los límites de peso para evitar tarifas adicionales:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Vuelos Nacionales:</strong> Peso permitido en equipaje facturado: 15-23 kg. El exceso de peso puede costar entre $10 y $50 por kilogramo adicional.</li>
+                <li><strong>Vuelos Internacionales:</strong> Peso permitido en equipaje facturado: 23-32 kg (dependiendo de la clase). Tarifas por exceso pueden variar entre $50 y $150.</li>
+            </ul>
+            <p class="mb-4">Si necesitas llevar más equipaje, puedes pagar por maletas adicionales al momento de reservar tu vuelo o antes de viajar, lo que suele ser más económico que pagar en el aeropuerto.</p>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Viajar con Animales</h2>
+            <p class="mb-2">Si planeas viajar con tu mascota, estas son las reglas generales:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li>Las mascotas pequeñas pueden viajar en la cabina, siempre que su peso combinado con el transportín no supere los 8-10 kg.</li>
+                <li>Las mascotas más grandes deben viajar en la bodega en un transportín adecuado.</li>
+                <li>Es obligatorio contar con la documentación necesaria, como certificado de salud y vacunas.</li>
+            </ul>
+            <p class="mb-4">Consulta con tu aerolínea para conocer las tarifas y requisitos específicos.</p>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Consejos para Principiantes</h2>
+            <p class="mb-4">Si es tu primera vez viajando en avión, ten en cuenta lo siguiente:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li>Verifica las políticas de equipaje de tu aerolínea antes de viajar.</li>
+                <li>Etiqueta tus maletas con tu nombre y datos de contacto.</li>
+                <li>Evita llevar objetos prohibidos como líquidos en envases mayores a 100 ml en el equipaje de mano.</li>
+                <li>Empaca artículos valiosos y documentos importantes en tu equipaje de mano.</li>
+                <li>Llega con tiempo al aeropuerto para realizar el check-in y despachar tus maletas sin contratiempos.</li>
+            </ul>
+        </section>
+      </div>
+    <h2 class="comentario-titulo text-center">Cuéntanos tu experiencia</h2>
+    <form class="text-center mt-4" action="{% url 'crear_comentario' %}" method="post">
+        {% csrf_token %}
+        <textarea name="contenido" rows="4" cols="50" class="form-control mb-3" required></textarea>
+        <div class="d-flex justify-content-center">
+        <button type="submit" class="nav-link btn btn-primary mb-4">Comentar</button>
+        </div>
+    </form>
+    </div>
+</section>
+{% endblock %}

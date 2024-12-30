@@ -1,0 +1,44 @@
+{% extends "app_viaje/base.html" %}
+
+{% block title %}
+Guia de Viaje | Editar Perfil
+{% endblock %}
+
+{% block content %}
+<section id="editar-perfil" class="py-5">
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h2>Editar Perfil</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-center fw-bold fst-italic">Aquí puedes editar tus datos</p>
+                        
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <!-- Campos del formulario -->
+                            <div class="mb-3">
+                                {{ form.as_p }}
+                            </div>
+                            <div class="mb-3">
+                                {{ perfil_form.as_p }}
+                            </div>
+                            <!-- Botones de acción -->
+                            <div class="d-flex justify-content-around mt-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-edit me-1"></i> Editar Perfil
+                                </button>
+                                <a class="btn btn-secondary" href="{% url 'ver-perfil' %}">
+                                    <i class="fas fa-arrow-left me-1"></i> Volver al Inicio
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

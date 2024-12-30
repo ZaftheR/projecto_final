@@ -1,0 +1,46 @@
+{% extends 'app_viaje/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+       <br>
+       <div class="row g-4">
+           <div class="col-md-6 col-lg-3">
+               <div class="card bg-success">
+                    <div class="card-body text-center">
+                        <img src="{% static 'app_viaje/assets/img/sobre_mi.jpg' %}" class="rounded-circle mb-3" width="200px">
+                    <h3 class="card-title mb-3"><strong>Ramiro Gil</strong></h3>
+                    <p class="card-text">Aspirante a Python Developer</p>
+                    </div>
+               </div>
+           </div>
+           <div class="col">
+            <div class="">
+                <h2 class="text-4xl font-bold mb-12 text-center text-gray-800 mt-4">Acerca de mí.</h2>
+                 <div class="text-center">
+                    <p>¡Hola! Mi nombre es Ramiro. Soy nuevo en el mundo de la programación. Empecé mi inmersión en este amplio mundo con Python y la interfaz de Django. Estoy emocionado con mi primer proyecto. En este caso, intenté transmitir una de las problemáticas que se me presentaron a la hora de hacer un viaje, y me hubiera gustado tener una guía de viaje que me ayudara a planificarlo de una manera más sencilla, con la información más ordenada y precisa posible. Espero que les guste y les sea de utilidad.
+                    </p>
+                 </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <h2 class="text-4xl font-bold mb-12 text-center text-gray-800 mt-4">Acerca del Proyecto.</h2>
+                     <div class="text-center">
+                        <p>Este proyecto está diseñado para mejorar la experiencia de los viajeros al proporcionar información clara y precisa sobre vuelos, equipajes, y mucho más. Nuestra misión es ayudar a los usuarios a planificar sus viajes de manera sencilla y sin complicaciones.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-4">
+                            Desde su inicio, este proyecto ha sido impulsado por la pasión por los viajes y la tecnología. A través de una interfaz amigable y características útiles, esperamos hacer que viajar sea más accesible para todos.
+                        </p>
+            
+                     </div>
+                </div>
+           </div>
+       </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

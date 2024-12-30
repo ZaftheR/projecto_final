@@ -1,0 +1,41 @@
+{% extends "app_viaje/base.html" %}
+
+{% block title %}
+Guia de viaje | Enviar Mensajes
+{% endblock %}
+
+{% block content %}
+<section id="about" class="py-5 bg-light">
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4>Enviar Mensaje</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group mb-3">
+                                <label for="destinatario" class="form-label">Destinatario</label>
+                                <select name="destinatario" id="destinatario" class="form-select">
+                                    {% for usuario in usuarios %}
+                                        <option value="{{ usuario.username }}">{{ usuario.username }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="contenido" class="form-label">Mensaje</label>
+                                <textarea name="contenido" id="contenido" rows="5" class="form-control" placeholder="Escribe tu mensaje aquí..."></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary w-100" type="submit">Enviar Mensaje</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
