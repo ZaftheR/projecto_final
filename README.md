@@ -75,4 +75,10 @@ Crear un itinerario: Inicia sesión o regístrate, luego podrás crear itinerari
 Ver recomendaciones: Accede a las recomendaciones personalizadas basadas en tus preferencias y necesidades.
 Consultar información: Explora la información detallada sobre los destinos, incluyendo atracciones, alojamiento y transporte.
 Visualizar mapas: Utiliza los mapas interactivos para planificar tus rutas y explorar lugares cercanos.
+
+---
+
+**Video mostrando brevemente el proyecto**
+
+https://drive.google.com/file/d/1VqbX_qBSvuV_drxstLtTLw-7ldxkmEUt/view?usp=sharing
    
