@@ -2,7 +2,8 @@
 
 ## Proyecto Final Coder House - Python  
 **Comisión:** 27615  
-**Alumno:** Ramiro  
+**Alumno:** Ramiro Gil
+
 **Versión:** 1.0  
 
 ---
