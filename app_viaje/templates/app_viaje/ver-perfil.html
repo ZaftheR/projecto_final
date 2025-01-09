@@ -1,5 +1,8 @@
 {% extends "app_viaje/base.html" %}
+<<<<<<< HEAD
 {% load static %}
+=======
+>>>>>>> 9e995c50adac824cee152f11149c09f77e02b080
 
 {% block title %}
 Guia de Viaje | Perfil de {{ user.username }}
@@ -15,6 +18,7 @@ Guia de Viaje | Perfil de {{ user.username }}
                         <h2>Perfil de {{ user.username }}</h2>
                     </div>
                     <div class="card-body text-center">
+<<<<<<< HEAD
                         <!-- Mostrar imagen de perfil o una imagen por defecto -->
                         {% if perfil.imagen %}
                             <img src="{{ perfil.imagen.url }}" alt="Foto de perfil" class="img-fluid rounded-circle" width="150" height="150">
@@ -23,6 +27,13 @@ Guia de Viaje | Perfil de {{ user.username }}
                         {% endif %}
                         
                         <!-- Mostrar detalles del usuario -->
+=======
+                        {% if perfil.imagen %}
+                            <img src="{{ perfil.imagen.url }}" alt="Foto de perfil" class="img-fluid">
+                        {% else %}
+                            <p>No hay imagen cargada.</p>
+                        {% endif %}
+>>>>>>> 9e995c50adac824cee152f11149c09f77e02b080
                         <p class="mt-3"><strong>Nombre:</strong> {{ user.first_name }}</p>
                         <p><strong>Apellido:</strong> {{ user.last_name }}</p>
                         <p><strong>Email:</strong> {{ user.email }}</p>
@@ -33,4 +44,7 @@ Guia de Viaje | Perfil de {{ user.username }}
     </div>
 </section>
 {% endblock %}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e995c50adac824cee152f11149c09f77e02b080
