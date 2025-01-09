@@ -80,5 +80,5 @@ Visualizar mapas: Utiliza los mapas interactivos para planificar tus rutas y exp
 
 **Video mostrando brevemente el proyecto**
 
-https://drive.google.com/file/d/1VqbX_qBSvuV_drxstLtTLw-7ldxkmEUt/view?usp=sharing
+https://drive.google.com/file/d/1fUSE-MgYKomHsxz_4wck4EtrF-0wzSv-/view?usp=sharing
    
