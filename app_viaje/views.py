@@ -67,17 +67,13 @@ def cerrar_sesion(request):
 
 @login_required
 def ver_perfil(request):
-<<<<<<< HEAD
     try:
         perfil = Perfil.objects.get(user=request.user)
     except Perfil.DoesNotExist:
         perfil = Perfil.objects.create(user=request.user)
 
     return render(request, "app_viaje/ver-perfil.html", {"perfil": perfil})
-=======
-    perfil = Perfil.objects.get(user=request.user)
-    return render(request, 'app_viaje/ver-perfil.html', {'perfil': perfil})
->>>>>>> 9e995c50adac824cee152f11149c09f77e02b080
+
 
 def registrar_usuario(request):
     if request.method == 'POST':
