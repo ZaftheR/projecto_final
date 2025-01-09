@@ -1,0 +1,39 @@
+{% extends "app_viaje/base.html" %}
+
+{% block title %}
+Guia de Viaje | Formularios Recomendaciones
+{% endblock %}
+
+{% block content %}
+<section id="editar-recomendacion" class="py-5">
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h2>Editar Recomendación</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <!-- Formulario con los campos -->
+                            <div class="mb-3">
+                                {{ form.as_p }}
+                            </div>
+                            <!-- Botones de acción -->
+                            <div class="d-flex justify-content-between mt-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-1"></i> Guardar Cambios
+                                </button>
+                                <a class="btn btn-secondary" href="{% url 'recomendaciones' %}">
+                                    <i class="fas fa-arrow-left me-1"></i> Volver
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "app_viaje/base.html" %}
+
+{% block title %}
+Guia de Viaje | Vuelo
+{% endblock %}
+
+
+{% block content%}
+<section id="about" class="py-5">
+    <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">5 Recomendaciones esenciales para tu vuelo</h1>
+<div class="container mt-4">
+    <section class="mb-5">
+        <h2>1. Documentación y Check-in Anticipado</h2>
+        <p>La preparación de la documentación es fundamental para garantizar un viaje sin contratiempos. Asegúrate de tener tu pasaporte vigente con al menos seis meses de validez antes de la fecha de regreso. Realiza el check-in en línea con 24-48 horas de anticipación, lo que no solo te ahorrará tiempo en el aeropuerto, sino que también te permitirá seleccionar mejores asientos. Mantén a mano copias digitales y físicas de tu identificación, itinerario de vuelo, reservas de hotel y cualquier visa necesaria. Es recomendable tomar fotografías de todos tus documentos y guardarlas en tu teléfono o en la nube como respaldo adicional. También es importante verificar los requisitos específicos de documentación para tu destino, especialmente si viajas internacionalmente, ya que algunos países pueden requerir visas o permisos especiales.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>2. Equipaje Inteligente y Organizado</h2>
+        <p>La organización del equipaje puede hacer o deshacer tu experiencia de viaje. Comienza por verificar las políticas específicas de equipaje de tu aerolínea, incluyendo límites de peso y dimensiones tanto para el equipaje documentado como de mano. Utiliza organizadores de maleta o bolsas de compresión para maximizar el espacio y mantener tu ropa ordenada. Empaca un cambio completo de ropa en tu equipaje de mano en caso de que tu maleta documentada se retrase. Para líquidos en el equipaje de mano, recuerda la regla 3-1-1: contenedores de 3.4 oz (100ml) o menos, en una bolsa de plástico transparente de 1 litro, 1 bolsa por pasajero. Etiqueta todas tus maletas con tu información de contacto tanto en el exterior como en el interior. Considera usar etiquetas distintivas o coloridas para identificar fácilmente tu equipaje en la banda de reclamo.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>3. Llegada Anticipada al Aeropuerto</h2>
+        <p>
+            La puntualidad es crucial cuando se trata de vuelos. Para vuelos nacionales, se recomienda llegar al aeropuerto con un mínimo de 2 horas de anticipación, mientras que para vuelos internacionales, lo ideal es llegar 3 horas antes. Este tiempo extra te permitirá manejar imprevistos como tráfico pesado en el camino al aeropuerto, largas filas en el check-in o en los controles de seguridad. Utiliza este tiempo adicional para familiarizarte con la terminal, localizar tu puerta de embarque y, si es necesario, hacer algunas compras de última hora. Considera factores como la hora del día, el tráfico típico en la ruta al aeropuerto y si viajas en temporada alta. Durante días festivos o períodos de mucho tráfico, podrías necesitar incluso más tiempo. También es importante verificar el estado de tu vuelo antes de salir hacia el aeropuerto para estar al tanto de cualquier cambio o retraso.
+        </p>
+    </section>
+
+    <section class="mb-5">
+        <h2>4. Comodidad Durante el Vuelo</h2>
+        <p>Prepararse para la comodidad durante el vuelo puede hacer una gran diferencia en tu experiencia de viaje, especialmente en vuelos largos. Viste ropa cómoda y en capas, ya que la temperatura en el avión puede variar. Considera llevar un kit de comodidad básico que incluya una almohada de viaje, antifaz para dormir, tapones para los oídos o audífonos con cancelación de ruido, y calcetines cómodos. La hidratación es fundamental durante el vuelo, así que lleva una botella de agua vacía que puedas llenar después de pasar el control de seguridad. Para combatir el jet lag y la fatiga, muévete periódicamente durante el vuelo, realiza ejercicios simples de estiramiento en tu asiento y mantente hidratado. En vuelos largos, considera llevar algunos refrigerios saludables, ya que las opciones de comida a bordo pueden ser limitadas o no ajustarse a tus preferencias dietéticas.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>5. Seguridad y Salud en el Viaje</h2>
+        <p>La seguridad y la salud son aspectos fundamentales que no deben descuidarse durante el viaje. Mantén contigo medicamentos esenciales en tu equipaje de mano, junto con una copia de las recetas médicas si son necesarias. Es recomendable tener un seguro de viaje que cubra emergencias médicas y cancelaciones de vuelo. Familiarízate con las medidas de seguridad actuales del aeropuerto y la aerolínea, incluyendo cualquier protocolo sanitario especial. Lleva contigo un pequeño kit de primeros auxilios que incluya analgésicos, medicamentos para el mareo, curitas y cualquier medicamento personal necesario. También es importante mantener una buena higiene durante el viaje: lleva gel antibacterial, toallitas desinfectantes y mascarillas si lo consideras necesario. Mantén una lista de contactos de emergencia fácilmente accesible, incluyendo números de tu seguro de viaje, embajada (para viajes internacionales) y contactos personales importantes.</p>
+    </section>
+    <h2 class="comentario-titulo text-center">Cuentanos tu experiencia</h2>
+    <form class="text-center mt-4" action="{% url 'crear_comentario' %}" method="post">
+        {% csrf_token %}
+        <textarea name="contenido" rows="4" cols="50" class="form-control mb-3" required></textarea>
+        <div class="d-flex justify-content-center">
+        <button type="submit" class="nav-link btn btn-primary mb-4">Comentar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "app_viaje/base.html" %}
+
+{% block title %}
+Guia de Viaje | Estadia
+{% endblock %}
+
+
+{% block content%}
+<section id="about" class="py-5">
+<div class="container mt-4">
+    <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">Tus mejores opciones de alojamiento</h1>
+    <section class="mb-5">
+        <h2><strong>Cómo encontrar la mejor estadía</strong></h2>
+        <p>Encontrar el alojamiento perfecto puede marcar la diferencia en tu viaje. Primero, establece tu presupuesto y prioridades. ¿Buscas lujo o comodidad básica? Investiga plataformas confiables como Booking, Airbnb o VRBO. Lee detenidamente las reseñas, especialmente las más recientes. Considera la ubicación respecto a los puntos de interés que planeas visitar. Verifica las políticas de cancelación y los servicios incluidos. No olvides contactar directamente al anfitrión o hotel para resolver dudas específicas.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>Ciudad vs Costa: ¿Dónde hospedarse?</h2>
+        <h3>Ventajas de la Ciudad:</h3>
+        <ul>
+            <li>Cerca de atracciones culturales y museos</li>
+            <li>Mejor transporte público</li>
+            <li>Variedad de restaurantes y vida nocturna</li>
+            <li>Acceso a servicios médicos y comercios</li>
+        </ul>
+        <h3>Ventajas de la Costa:</h3>
+        <ul>
+            <li>Ambiente más relajado y tranquilo</li>
+            <li>Vistas al mar y acceso directo a la playa</li>
+            <li>Mejor calidad del aire</li>
+            <li>Actividades acuáticas disponibles</li>
+        </ul>
+    </section>
+
+    <section class="mb-5">
+        <h2>Mi experiencia en Maldivas</h2>
+        <p>Durante mi estadía en Maldivas, elegí un bungalow sobre el agua en Maafushi. La experiencia fue surreal: despertar con el sonido de las olas, ver peces tropicales nadando bajo mi habitación y disfrutar de atardeceres incomparables. Sin embargo, el aislamiento puede ser abrumador para algunos. El transporte entre islas resultó más complicado de lo esperado, y los precios de las comidas eran bastante elevados. A pesar de estos detalles, la experiencia general fue inolvidable.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>Consejos adicionales para tu estadía</h2>
+        <p>Independientemente de dónde elijas hospedarte, considera estos aspectos: seguridad del vecindario, proximidad al transporte público, ruido ambiental y temporada del año. En zonas costeras, infórmate sobre la temporada de huracanes. En ciudades, investiga sobre eventos o festivales que puedan afectar precios y disponibilidad.</p>
+    </section>
+    </div>
+    <h2 class="comentario-titulo text-center">Cuentanos tu experiencia</h2>
+    <form class="text-center mt-4" action="{% url 'crear_comentario' %}" method="post">
+        {% csrf_token %}
+        <textarea name="contenido" rows="4" cols="50" class="form-control mb-3" required></textarea>
+        <div class="d-flex justify-content-center">
+        <button type="submit" class="nav-link btn btn-primary mb-4">Comentar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

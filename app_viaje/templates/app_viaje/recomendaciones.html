@@ -1,0 +1,60 @@
+{% extends "app_viaje/base.html" %}
+
+{% block title %}
+Guia de Viaje | Recomendaciones
+{% endblock %}
+
+{% block content %}
+<section id="recomendaciones" class="py-5">
+    <div class="bg-gray-100 p-8">
+        <h1 class="text-4xl font-bold mb-12 text-center text-gray-800 mt-4">Algunas de las recomendaciones</h1>
+        <h3 class="text-4xl font-bold mb-12 text-center text-gray-800 mt-4">Todas fueron hechas por usuarios del blog</h3>
+
+        <h2 class="text-center mt-2">Buscar recomendación</h2>
+        <!-- Formulario de búsqueda -->
+        <div class="d-flex flex-column align-items-center mb-2">
+            <form action="" method="GET">
+                <input type="text" name="q" placeholder="Buscar..." required>
+                <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Alojamiento</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for recomendacion in recomendaciones %}
+                        <tr class="table-warning">
+                            <td>{{ recomendacion.nombre }}</td>
+                            <td>{{ recomendacion.alojamiento }}</td>
+                            <td>{{ recomendacion.fecha }}</td>
+                            <td>
+                                {% if user.is_superuser or recomendacion.usuario == user %}
+                                    <a class="btn btn-warning" href="{% url 'recomendaciones-editar' recomendacion.pk %}">Editar</a>
+                                    <a class="btn btn-danger" href="{% url 'recomendaciones-eliminar' recomendacion.pk %}">Eliminar</a>
+                                    <a class="btn btn-info" href="{% url 'recomendaciones-ver' recomendacion.pk %}">Ver Detalles</a>
+                                {% else %}
+                                    <a class="btn btn-info" href="{% url 'recomendaciones-ver' recomendacion.pk %}">Ver Detalles</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botón para agregar una nueva recomendación -->
+        <div class="d-flex justify-content-center mt-4">
+            <a href="{% url 'recomendaciones-formulario' %}" class="btn btn-success btn-lg">Agregar Recomendación</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

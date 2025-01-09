@@ -1,0 +1,46 @@
+{% extends "app_viaje/base.html" %}
+
+{% block title %}
+Guia de Viaje | Formularios Profesores
+{% endblock %}
+
+{% block content %}
+<section id="formulario-profesores" class="py-5">
+    <!-- Mostrar mensajes de error -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="d-flex justify-content-center alert alert-danger w-50 m-auto mb-3" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    <!-- Contenedor principal centrado -->
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-lg">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h2>Iniciar Sesión</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="mb-4">
+                                <input type="text" name="usuario" placeholder="Nombre de usuario" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" name="contraseña" placeholder="Contraseña" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <p class="text-muted">¿No tienes una cuenta? <a href="{% url 'registrar-usuario' %}" class="font-weight-bold text-primary">Regístrate</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
